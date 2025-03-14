@@ -1,0 +1,132 @@
+/* Reset CSS pentru a elimina marginile și padding-urile implicite */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+  background: url('/assets/background_5.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+
+.welcome-container {
+  margin-top: 4rem;
+  margin-left: 5rem;
+  width: 40%;
+  line-height: 1.5;
+  font-size: 2rem;
+  color: black;
+}
+
+.welcome-container p {
+  color: #555;
+  line-height: normal;
+  font-size: 22px;
+  margin-top: 2rem;
+}
+
+.create-button {
+  display: flex;
+  margin-top: 3rem;
+  font-weight: 500;
+}
+
+.create-button button {
+  background-color: black;
+  color: white;
+  height: 4rem;
+  font-size: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.create-button button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+
+/* Responsive styles */
+@media (max-width: 1480px) {
+
+  .welcome-container {
+    width: 50%;
+  }
+
+
+
+}
+
+@media (max-width: 1250px) {
+  .welcome-container {
+    width: 60%;
+    font-size: 1.8rem;
+  }
+
+  .welcome-container p {
+    font-size: 18px;
+  }
+
+  .create-button button {
+    font-size: 18px;
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .welcome-container {
+    width: 60%;
+    font-size: 1.5em;
+  }
+
+  .welcome-container p {
+    font-size: 18px;
+  }
+
+  .create-button button {
+    font-size: 18px;
+    height: 3.5rem;
+  }
+}
+
+
+@media (max-width: 760px) {
+  .welcome-container {
+    font-size: 1.4rem;
+    margin-left: 3rem
+  }
+
+  .welcome-container p {
+    font-size: 18px;
+  }
+
+  .create-button button {
+    font-size: 16px;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .welcome-container {
+    font-size: 1.2rem;
+  }
+
+  .welcome-container p {
+    font-size: 16px;
+  }
+
+}

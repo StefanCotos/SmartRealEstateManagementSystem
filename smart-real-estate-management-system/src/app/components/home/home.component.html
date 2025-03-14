@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="main-container">
+  <div class="welcome-container">
+    <h1>Welcome to Smart Real Estates</h1>
+    <p>
+      Want to find a home? We are ready to help you find one that suits your
+      lifestyle and needs
+    </p>
+    <div class="create-button">
+      <button *ngIf="isLogged()" (click)="navigateToCreateEstate()">Create new Estate</button>
+    </div>
+  </div>
+</div>
+<div class="estates">
+  <app-estate-list></app-estate-list>
+</div>
+<app-footer></app-footer>

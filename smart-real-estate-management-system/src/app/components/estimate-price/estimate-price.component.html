@@ -1,0 +1,110 @@
+<app-navbar></app-navbar>
+
+<div class="estimate-price">
+  <form [formGroup]="estimatePriceForm" (ngSubmit)="onSubmit()" class="form-container">
+    <h2>Estimate Estate's Price</h2>
+    <div class="form-content">
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input id="price" formControlName="price" />
+        <div class="error" *ngIf="estimatePriceForm.get('price')?.hasError('required')">
+          Price is required
+        </div>
+        <div class="error" *ngIf="estimatePriceForm.get('price')?.hasError('min')">
+          Price must be greater than 0
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="bedrooms">Number of bedrooms</label>
+        <input id="bedrooms" formControlName="bedrooms" />
+        <div class="error" *ngIf="estimatePriceForm.get('bedrooms')?.hasError('required')">
+          Number of bedrooms is required
+        </div>
+        <div class="error" *ngIf="estimatePriceForm.get('bedrooms')?.hasError('min')">
+          Number of bedrooms must be greater than 0
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="bathrooms">Number of bathrooms</label>
+        <input id="bathrooms" formControlName="bathrooms" />
+        <div class="error" *ngIf="estimatePriceForm.get('bathrooms')?.hasError('required')">
+          Number of bathrooms is required
+        </div>
+        <div class="error" *ngIf="estimatePriceForm.get('bathrooms')?.hasError('min')">
+          Number of bathrooms must be greater than 0
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="landsize">Land Size</label>
+        <input id="landsize" formControlName="landsize" />
+        <div class="error" *ngIf="estimatePriceForm.get('landsize')?.hasError('required')">
+          Land Size is required
+        </div>
+        <div class="error" *ngIf="estimatePriceForm.get('landsize')?.hasError('min')">
+          Land Size must be greater than 0
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input id="street" formControlName="street" />
+        <div class="error" *ngIf="estimatePriceForm.get('street')?.hasError('required')">
+          Street is required
+        </div>
+        <div class="error" *ngIf="estimatePriceForm.get('street')?.hasError('maxlength')">
+          Street cannot be longer than 100 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input id="city" formControlName="city" />
+        <div class="error" *ngIf="estimatePriceForm.get('city')?.hasError('required')">
+          City is required
+        </div>
+        <div class="error" *ngIf="estimatePriceForm.get('city')?.hasError('maxlength')">
+          City cannot be longer than 100 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <input id="state" formControlName="state" />
+        <div class="error" *ngIf="estimatePriceForm.get('state')?.hasError('required')">
+          State is required
+        </div>
+        <div class="error" *ngIf="estimatePriceForm.get('state')?.hasError('maxlength')">
+          State cannot be longer than 100 character
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="zipcode">ZipCode</label>
+        <input id="zipcode" formControlName="zipcode" />
+        <div class="error" *ngIf="estimatePriceForm.get('zipcode')?.hasError('required')">
+          Zipcode is required
+        </div>
+        <div class="error" *ngIf="estimatePriceForm.get('zipcode')?.hasError('maxlength')">
+          Zipcode cannot be longer than 15 character
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label for="housesize">House Size</label>
+        <input id="housesize" formControlName="housesize" />
+        <div class="error" *ngIf="estimatePriceForm.get('housesize')?.hasError('required')">
+          House Size is required
+        </div>
+        <div class="error" *ngIf="estimatePriceForm.get('housesize')?.hasError('min')">
+          House Size must be greater than 0
+        </div>
+      </div>
+
+    </div>
+    <button type="submit" [disabled]="estimatePriceForm.invalid">Estimate Price</button>
+  </form>
+
+  <div class="estimated-price">
+    <h3 *ngIf="isLoading">Estimating price{{ dots }}</h3>
+    <h3 *ngIf="!isLoading && price !== undefined && price !== null">Estimated price: {{ price }} EUR</h3>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

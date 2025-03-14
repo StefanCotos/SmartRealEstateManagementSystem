@@ -1,0 +1,113 @@
+<app-navbar></app-navbar>
+<div class="main-container">
+  <div class="container1" *ngIf="estate && username && userId">
+    <div class="left-content">
+      <div class="estate-header">
+        <h1>{{ estate.name }}</h1>
+        <button *ngIf="this.userService.getUserId() !== estate.userId && this.userService.isLoggedIn()"
+          (click)="toggleFavorite(estate.id || '')" class="favorite-icon-button">
+          <img [src]="getFavoriteIcon(estate.id || '')" alt="favorite-icon" class="favorite-icon" />
+        </button>
+      </div>
+      <div class="container1-details">
+        <div class="container1-row1">
+          <p><strong>Description:</strong></p>
+          <p>{{ estate.description }}</p>
+        </div>
+        <div class="container1-row2">
+          <p><strong>Price:</strong></p>
+          <p><strong>{{ estate.price }}€</strong></p>
+        </div>
+      </div>
+
+    </div>
+    <div class="right-content">
+      <div class="image-slider">
+        <div class="slide" *ngFor="let image of images; let i = index" [class.active]="i === currentSlide">
+          <img [src]="image" alt="estate" />
+        </div>
+      </div>
+      <div class="slider-buttons">
+        <button class="prev" (click)="prevSlide()">&#8592;</button>
+        <button class="next" (click)="nextSlide()">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container2">
+  <div class="container2-header">
+    <h2>Details:</h2>
+  </div>
+  <div class="info">
+    <div class="row">
+      <div class="inline">
+        <img src="../../../assets/double-bed.png" alt="bed-icon" />
+        <p><strong>{{ estate?.bedrooms }}</strong></p>
+        <p>bedrooms</p>
+
+      </div>
+      <div class="inline">
+        <img src="../../../assets/bathroom.png" alt="bed-icon" />
+
+        <p><strong>{{ estate?.bathrooms }}</strong></p>
+        <p>bathrooms</p>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="inline">
+        <img src="../../../assets/area.png" alt="bed-icon" />
+
+        <p><strong>{{ estate?.landSize }} m&#178;</strong></p>
+        <p>landSize</p>
+
+      </div>
+      <div class="inline">
+        <img src="../../../assets/size.png" alt="bed-icon" />
+
+        <p><strong>{{ estate?.houseSize }} m&#178;</strong></p>
+        <p>houseSize</p>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="inline">
+        <p><strong>Adress:</strong></p>
+        <p>Str {{ estate?.street }}, {{ estate?.city }}, {{ estate?.state }}, {{ estate?.zipCode }} </p>
+      </div>
+    </div>
+
+    <div class="inline">
+      <p><strong>Listing Date:</strong></p>
+      <p>{{ estate?.listingData | date:'fullDate' }}</p>
+    </div>
+
+    <div class="inline">
+      <p><strong>Seller: </strong></p>
+      <p>{{ username }}</p>
+    </div>
+
+    <div *ngIf="this.userService.getUserId() == estate?.userId" class="inline">
+      <p><strong>Status: </strong></p>
+      <p>{{ estate?.isSold ? 'Sold' : 'OnSale' }}</p>
+    </div>
+  </div>
+  <div class="buttons">
+    <div *ngIf="notCurrentUser()" class="user-buttons">
+      <button class="review-button" (click)="onReviews(userId)">Reviews</button>
+      <button class="report-button" (click)="onReport(userId)">Report</button>
+    </div>
+
+    <div *ngIf="authUser()" class="section-edit">
+      <button *ngIf="!estate.isSold" class="edit-button" (click)="onEdit(estate.id || '')">Edit</button>
+      <button *ngIf="!estate.isSold" class="delete-button" (click)="onDelete(estate.id)">Delete</button>
+    </div>
+    <div *ngIf="notCurrentUser() && !estate?.isSold" class="section-buy">
+      <button class="pay-button" (click)="buyThisProduct(estate)">Buy</button>
+    </div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+
+  margin: 0;
+  /* Elimină marginile implicite */
+  padding: 0;
+  /* Elimină padding-ul implicit */
+  font-family: "Open sans", serif;
+}
+
+.active {
+  font-weight: bold;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}

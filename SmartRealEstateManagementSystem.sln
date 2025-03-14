@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{76ED1D5B-C8FE-40A9-B3BC-EDECC8F92CF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{15B4D22D-45BD-49BD-B72C-E0E79594A119}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{8EC617BA-3F52-4597-B784-D80ADBBEEDA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{2609295D-81F5-468B-ACD9-091F16384AC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{97CA4855-0BD7-4D09-B2A4-E458976FAA89}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{E65ABCA7-7324-47DB-991A-05417E7B1D9E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{725FAA5B-06E4-4821-A619-EEBE6CB6F664}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAPI", "WebAPI", "{016DEF65-DCDF-4177-BB47-0A12147CD4D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartRealEstateManagementSystem", "SmartRealEstateManagementSystem\SmartRealEstateManagementSystem.csproj", "{9EE5A184-0DE5-485D-9B62-8E33218152E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity", "Identity\Identity.csproj", "{845223E4-87D5-4DFC-9E05-E7F079A86D12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1E256D06-E035-49EF-A713-C1E2B39EAFA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartRealEstateManagementSystem.Application.UnitTests", "SmartRealEstateManagementSystem.Application.UnitTests\SmartRealEstateManagementSystem.Application.UnitTests.csproj", "{6E340539-3F85-468B-8EF2-817363799D5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartRealEstateManagementSystem.IntegrationTests", "SmartRealEstateManagementSystem.IntegrationTests\SmartRealEstateManagementSystem.IntegrationTests.csproj", "{783E7C1C-5C69-4205-90BD-00634C95B6A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76ED1D5B-C8FE-40A9-B3BC-EDECC8F92CF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76ED1D5B-C8FE-40A9-B3BC-EDECC8F92CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76ED1D5B-C8FE-40A9-B3BC-EDECC8F92CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76ED1D5B-C8FE-40A9-B3BC-EDECC8F92CF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E65ABCA7-7324-47DB-991A-05417E7B1D9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65ABCA7-7324-47DB-991A-05417E7B1D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65ABCA7-7324-47DB-991A-05417E7B1D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65ABCA7-7324-47DB-991A-05417E7B1D9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{725FAA5B-06E4-4821-A619-EEBE6CB6F664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725FAA5B-06E4-4821-A619-EEBE6CB6F664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725FAA5B-06E4-4821-A619-EEBE6CB6F664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725FAA5B-06E4-4821-A619-EEBE6CB6F664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE5A184-0DE5-485D-9B62-8E33218152E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE5A184-0DE5-485D-9B62-8E33218152E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE5A184-0DE5-485D-9B62-8E33218152E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE5A184-0DE5-485D-9B62-8E33218152E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{845223E4-87D5-4DFC-9E05-E7F079A86D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{845223E4-87D5-4DFC-9E05-E7F079A86D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{845223E4-87D5-4DFC-9E05-E7F079A86D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{845223E4-87D5-4DFC-9E05-E7F079A86D12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E340539-3F85-468B-8EF2-817363799D5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E340539-3F85-468B-8EF2-817363799D5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E340539-3F85-468B-8EF2-817363799D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E340539-3F85-468B-8EF2-817363799D5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{783E7C1C-5C69-4205-90BD-00634C95B6A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{783E7C1C-5C69-4205-90BD-00634C95B6A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{783E7C1C-5C69-4205-90BD-00634C95B6A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{783E7C1C-5C69-4205-90BD-00634C95B6A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76ED1D5B-C8FE-40A9-B3BC-EDECC8F92CF4} = {8EC617BA-3F52-4597-B784-D80ADBBEEDA8}
+		{8EC617BA-3F52-4597-B784-D80ADBBEEDA8} = {15B4D22D-45BD-49BD-B72C-E0E79594A119}
+		{2609295D-81F5-468B-ACD9-091F16384AC1} = {15B4D22D-45BD-49BD-B72C-E0E79594A119}
+		{97CA4855-0BD7-4D09-B2A4-E458976FAA89} = {15B4D22D-45BD-49BD-B72C-E0E79594A119}
+		{E65ABCA7-7324-47DB-991A-05417E7B1D9E} = {2609295D-81F5-468B-ACD9-091F16384AC1}
+		{725FAA5B-06E4-4821-A619-EEBE6CB6F664} = {97CA4855-0BD7-4D09-B2A4-E458976FAA89}
+		{016DEF65-DCDF-4177-BB47-0A12147CD4D9} = {15B4D22D-45BD-49BD-B72C-E0E79594A119}
+		{9EE5A184-0DE5-485D-9B62-8E33218152E1} = {016DEF65-DCDF-4177-BB47-0A12147CD4D9}
+		{845223E4-87D5-4DFC-9E05-E7F079A86D12} = {97CA4855-0BD7-4D09-B2A4-E458976FAA89}
+		{6E340539-3F85-468B-8EF2-817363799D5D} = {1E256D06-E035-49EF-A713-C1E2B39EAFA2}
+		{783E7C1C-5C69-4205-90BD-00634C95B6A3} = {1E256D06-E035-49EF-A713-C1E2B39EAFA2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D43D9D32-0BB0-4996-A4E9-689D7D629757}
+	EndGlobalSection
+EndGlobal

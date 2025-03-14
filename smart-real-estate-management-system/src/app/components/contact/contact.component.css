@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  width: 100%;
+  height: 60vh;
+  background: url('/assets/background_5.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+
+.welcome-container {
+  margin-top: 4rem;
+  margin-left: 5rem;
+  width: 40%;
+  line-height: 1.5;
+  font-size: 2rem;
+  color: black;
+}
+
+.welcome-container p {
+  color: #555;
+  line-height: normal;
+  font-size: 22px;
+  margin-top: 2rem;
+}
+
+
+form {
+  margin: 2rem auto;
+  width: 40vw;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-content {
+  width: 80%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 16px;
+
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error {
+  color: red;
+  font-size: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.message-input {
+  padding: 2rem;
+}
+
+button {
+  padding: 0.75rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+button:hover {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 1480px) {
+
+  .welcome-container {
+    width: 50%;
+    }
+   
+  
+  
+  }
+  
+  @media (max-width: 1250px) {
+    .welcome-container {
+      width: 60%;
+      font-size:1.8rem;
+      }
+      .welcome-container p {
+        font-size: 18px;
+        width: 50%;
+      }
+      .create-button button {
+        font-size: 18px;
+        height: 3.5rem;
+      }
+  }
+  
+  @media (max-width: 1024px) {
+    .welcome-container {
+      width: 60%;
+      font-size: 1.5em;
+      }
+      .welcome-container p {
+        font-size: 18px;
+      }
+      .create-button button {
+        font-size: 18px;
+        height: 3.5rem;
+      }
+  }
+  
+  
+  @media (max-width: 760px) {
+    .welcome-container {
+      font-size: 1.4rem;
+      margin-left:3rem
+    }
+    .welcome-container p {
+      font-size: 18px;
+    }
+    .create-button button {
+      font-size: 16px;
+      height: 3rem;
+    }
+
+  form {
+    width: 70vw;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .welcome-container {
+    font-size: 1.2rem;
+  }
+
+  .welcome-container p {
+    font-size: 16px;
+  }
+
+}

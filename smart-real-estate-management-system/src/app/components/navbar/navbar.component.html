@@ -1,0 +1,43 @@
+<nav class="navbar" [class.is-menu-expanded]="isMenuExpanded">
+  <ul class="left-nav">
+    <a (click)="navigateToEstateList()">
+      <img class="logo" src="../../../assets/logo.png" alt="logo" />
+
+    </a>
+  </ul>
+  <ul class="center-nav">
+    <li><a (click)="navigateToEstateList()">Home</a></li>
+    <li *ngIf="isLogged()"><a (click)="navigateToCreateEstate()">Create Estate</a></li>
+    <li><a (click)="navigateToEstimatePrice()">Estimate Price</a></li>
+    <li><a (click)="navigateToContact()">Contact</a></li>
+    <li *ngIf="isLogged()"><a (click)="navigateToFavoriteEstates()">Wishlist</a></li>
+    <li *ngIf="isAdmin()"><a (click)="navigateToAdminPage()">Admin</a></li>
+  </ul>
+  <ul class="right-nav">
+    <li *ngIf="!isLogged()">
+      <button (click)="navigateToLogin()">Login</button>
+    </li>
+    <li *ngIf="!isLogged()">
+      <button (click)="navigateToRegister()">Register</button>
+    </li>
+    <li *ngIf="isLogged()">
+      <button (click)="navigateToProfile()">{{ getUserName() }}</button>
+      <button (click)="logout()">Logout</button>
+    </li>
+  </ul>
+  <div class="menu">
+    <button type="button" class="menu-toggle" (click)="toggleMenu()">☰</button>
+    <div *ngIf="isMenuExpanded" class="content">
+      <button (click)="navigateToEstateList()">Home</button>
+      <button *ngIf="isLogged()" (click)="navigateToCreateEstate()">Create Estate</button>
+      <button (click)="navigateToEstimatePrice()">Estimate Price</button>
+      <button (click)="navigateToContact()">Contact</button>
+      <button *ngIf="isLogged()" (click)="navigateToFavoriteEstates()">Wishlist</button>
+      <button *ngIf="isAdmin()" (click)="navigateToAdminPage()">Admin</button>
+      <button *ngIf="!isLogged()" (click)="navigateToLogin()">Login</button>
+      <button *ngIf="!isLogged()" (click)="navigateToRegister()">Register</button>
+      <button *ngIf="isLogged()" (click)="navigateToProfile()">{{ getUserName() }}</button>
+      <button *ngIf="isLogged()" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>

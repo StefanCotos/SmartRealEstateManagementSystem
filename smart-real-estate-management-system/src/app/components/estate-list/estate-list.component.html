@@ -1,0 +1,88 @@
+<div class="filter">
+  <p>Search for avaible propreties</p>
+  <div class="content-filter">
+    <form (ngSubmit)="applyFilter()">
+      <div class="filter-type">
+        <label for="name">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" id="name" name="name" [(ngModel)]="filter.name" />
+      </div>
+      <div class="filter-type">
+        <label for="street">Street:&nbsp;</label>
+        <input type="street" id="street" name="street" [(ngModel)]="filter.street" />
+      </div>
+      <div class="filter-type">
+        <label for="city">City:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="city" id="city" name="city" [(ngModel)]="filter.city" />
+      </div>
+      <div class="filter-type">
+        <label for="state">State:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="state" id="state" name="state" [(ngModel)]="filter.state" />
+      </div>
+      <div class="filter-type">
+        <label for="price">Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="number" id="price" name="price" [(ngModel)]="filter.price" />
+      </div>
+      <div class="filter-type">
+        <label for="bedrooms">Bedrooms:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="bedrooms" id="bedrooms" name="bedrooms" [(ngModel)]="filter.bedrooms" />
+      </div>
+      <div class="filter-type">
+        <label for="bathrooms">Bathrooms:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="bathrooms" id="bathrooms" name="bathrooms" [(ngModel)]="filter.bathrooms" />
+      </div>
+      <div class="filter-type">
+        <label for="landSize">LandSize:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="landSize" id="landSize" name="landSize" [(ngModel)]="filter.landSize" />
+      </div>
+      <div class="filter-type">
+        <label for="houseSize">HouseSize:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="houseSize" id="houseSize" name="houseSize" [(ngModel)]="filter.houseSize" />
+      </div>
+      <input class="submit" type="submit" value="Search" />
+    </form>
+  </div>
+</div>
+
+<div class="estate-list">
+  <ng-container *ngFor="let estate of estates">
+    <div class="estate-card">
+      <img [src]="imageCache[estate.id || '']" alt="estate" />
+      <div class="card-content">
+        <div class="estate-header">
+          <h3>{{ estate.name }}</h3>
+          <button *ngIf="this.userService.getUserId() !== estate.userId && this.userService.isLoggedIn()"
+            (click)="toggleFavorite(estate.id || '')" class="favorite-icon-button">
+            <img [src]="getFavoriteIcon(estate.id || '')" alt="favorite-icon" class="favorite-icon" />
+          </button>
+        </div>
+        <div class="estate-address">
+          <img src="../../../assets/map.png" alt="map-icon" />
+          <span>{{ estate.street }}, {{ estate.city }}, {{ estate.state }}</span>
+        </div>
+        <div class="estate-details">
+          <div class="estate-size">
+            <img src="../../../assets/area.png" alt="size-icon" />
+            <span>{{ estate.houseSize }} m&#178;</span>
+          </div>
+        </div>
+        <div class="estate-button">
+          <button (click)="navigateToDetailEstate(estate.id || '')">
+            View details
+          </button>
+          <span>{{ estate.price }} EUR</span>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+
+<div class="pagination">
+  <a class="pagination-btn" (click)="changePage(false)">&#x276E;</a>
+  <div *ngFor="let num of getPagesArray()">
+    <a class="pagination-number" [class.active]="num === currentPage" (click)="goToPage(num)">
+      {{ num }}
+    </a>
+  </div>
+  <a class="pagination-btn" (click)="changePage(true)">&#x276F;</a>
+</div>

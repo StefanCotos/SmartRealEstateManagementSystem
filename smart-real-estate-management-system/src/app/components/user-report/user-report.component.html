@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+<div class="report-container">
+  
+    <form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
+      <h1>Report</h1>
+      <div class="form-content">
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" type="text"></textarea>
+        <div class="error" *ngIf="reportForm.get('description')?.hasError('required')">
+          Description is required.
+        </div>
+        <div class="error" *ngIf="reportForm.get('description')?.hasError('maxlength')">
+          Description cannot be longer than 500 characters
+        </div>
+      </div>
+      </div>
+      <button type="submit" [disabled]="reportForm.invalid">Report</button>
+    
+    </form>
+</div>
+
+<app-footer></app-footer>

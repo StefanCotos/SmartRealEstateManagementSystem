@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<div class="review-container">
+
+  <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+    <h1>Review</h1>
+    <div class="form-content">
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" type="text"></textarea>
+        <div class="error" *ngIf="reviewForm.get('description')?.hasError('required')">
+          Description is required.
+        </div>
+        <div class="error" *ngIf="reviewForm.get('description')?.hasError('maxlength')">
+          Description cannot be longer than 500 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input id="rating" formControlName="rating" type="number" />
+        <div class="error" *ngIf="reviewForm.get('rating')?.hasError('required')">
+          Rating is required.
+        </div>
+        <div class="error" *ngIf="reviewForm.get('rating')?.hasError('pattern')">
+          Rating must be a number between 1 and 10.
+        </div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="reviewForm.invalid">Add review</button>
+
+  </form>
+</div>
+
+<app-footer></app-footer>

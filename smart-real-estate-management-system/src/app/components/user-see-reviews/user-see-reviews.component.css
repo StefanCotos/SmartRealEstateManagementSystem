@@ -1,0 +1,177 @@
+.main-container {
+    width: 100%;
+    min-height: 100%;
+    background: url('/assets/background_5.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Asigură alinierea la început */
+    padding-top: 175px;
+    /* Adaugă spațiu deasupra containerului */
+}
+
+.container {
+    max-width: 800px;
+    width: 95%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 25px;
+}
+
+.reviews-list {
+    list-style-type: none;
+    /* Elimină stilul de listă */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centrează fiecare recenzie pe orizontală */
+    gap: 1rem;
+    width: 100%;
+    /* Asigură lățimea completă */
+}
+
+.review-item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    width: 80%;
+    /* Ajustează lățimea recenziei pentru a fi mai îngustă */
+    max-width: 600px;
+    /* Setează o limită maximă de lățime */
+    text-align: center;
+    /* Centrează textul */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px 10px;
+    color: #555;
+}
+
+.add-review-button {
+    align-self: center;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 20%;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
+    margin-bottom: 25px;
+}
+
+.add-review-button:hover {
+    background-color: black;
+}
+
+.rating-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating-bar {
+    background-color: #ddd;
+    height: 12px;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.rating-bar-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: 6px;
+}
+
+.rating-bar-fill.low {
+    background-color: #dc3545;
+}
+
+.rating-bar-fill.medium {
+    background-color: #ffc107;
+}
+
+.rating-bar-fill.high {
+    background-color: #28a745;
+}
+
+.rating-value {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    min-width: 40px;
+    text-align: right;
+}
+
+.review-description {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+
+    .review-description {
+        font-size: 1rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 992px) {
+    .rating-value {
+        font-size: 1rem;
+    }
+
+    .review-description {
+        font-size: 1rem;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rating-value {
+        font-size: 0.8rem;
+    }
+
+    .review-description {
+        font-size: 1rem;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 576px) {
+    .rating-value {
+        font-size: 0.8rem;
+    }
+
+    .review-description {
+        font-size: 1rem;
+        padding: 2px;
+    }
+}

@@ -1,0 +1,127 @@
+<app-navbar></app-navbar>
+<div class="estate-update">
+
+  <form [formGroup]="estateForm" (ngSubmit)="onSubmit()">
+    <h1>Update Estate</h1>
+    <div class="form-content">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" formControlName="name" />
+        <div class="error" *ngIf="estateForm.get('name')?.hasError('required')">
+          Name is required
+        </div>
+        <div class="error" *ngIf="estateForm.get('name')?.hasError('maxlength')">
+          Name cannot be longer than 100 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input id="description" formControlName="description" />
+        <div class="error" *ngIf="estateForm.get('description')?.hasError('required')">
+          Description is required
+        </div>
+        <div class="error" *ngIf="estateForm.get('description')?.hasError('maxlength')">
+          Description cannot be longer than 500 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input id="price" formControlName="price" />
+        <div class="error" *ngIf="estateForm.get('price')?.hasError('required')">
+          Price Date is required
+        </div>
+        <div class="error" *ngIf="estateForm.get('price')?.hasError('min')">
+          Price must be greater than 0
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="bedrooms">Bedrooms</label>
+        <input id="bedrooms" formControlName="bedrooms" />
+        <div class="error" *ngIf="estateForm.get('bedrooms')?.hasError('required')">
+          Bedrooms is required
+        </div>
+        <div class="error" *ngIf="estateForm.get('bedrooms')?.hasError('min')">
+          Bedrooms must be greater than 0
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="bathrooms">Bathrooms</label>
+        <input id="bathrooms" formControlName="bathrooms" />
+        <div class="error" *ngIf="estateForm.get('bathrooms')?.hasError('required')">
+          Bathrooms is required
+        </div>
+        <div class="error" *ngIf="estateForm.get('bathrooms')?.hasError('min')">
+          Bathrooms must be greater than 0
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="landSize">LandSize</label>
+        <input id="landSize" formControlName="landSize" />
+        <div class="error" *ngIf="estateForm.get('landSize')?.hasError('required')">
+          LandSize is required
+        </div>
+        <div class="error" *ngIf="estateForm.get('landSize')?.hasError('min')">
+          LandSize must be greater than 0
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input id="street" formControlName="street" />
+        <div class="error" *ngIf="estateForm.get('street')?.hasError('required')">
+          Street is required
+        </div>
+        <div class="error" *ngIf="estateForm.get('street')?.hasError('maxlength')">
+          Street cannot be longer than 100 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input id="city" formControlName="city" />
+        <div class="error" *ngIf="estateForm.get('city')?.hasError('required')">
+          City is required
+        </div>
+        <div class="error" *ngIf="estateForm.get('city')?.hasError('maxlength')">
+          City cannot be longer than 50 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <input id="state" formControlName="state" />
+        <div class="error" *ngIf="estateForm.get('state')?.hasError('required')">
+          State is required
+        </div>
+        <div class="error" *ngIf="estateForm.get('state')?.hasError('maxlength')">
+          State cannot be longer than 50 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="zipCode">ZipCode</label>
+        <input id="zipCode" formControlName="zipCode" />
+        <div class="error" *ngIf="estateForm.get('zipCode')?.hasError('required')">
+          ZipCode is required
+        </div>
+        <div class="error" *ngIf="estateForm.get('zipCode')?.hasError('maxlength')">
+          ZipCode cannot be longer than 15 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="houseSize">HouseSize</label>
+        <input id="houseSize" formControlName="houseSize" />
+        <div class="error" *ngIf="estateForm.get('houseSize')?.hasError('required')">
+          HouseSize is required
+        </div>
+        <div class="error" *ngIf="estateForm.get('houseSize')?.hasError('min')">
+          HouseSize must be greater than 0
+        </div>
+      </div>
+    </div>
+    <div class="image-upload">
+      <label for="images">Add Images</label>
+      <input type="file" id="images" (change)="onFileSelected($event)" multiple accept="image/*" />
+      <span>{{ selectedFilesCount }} images selected</span>
+    </div>
+    <button type="submit" [disabled]="estateForm.invalid">Update Estate</button>
+  </form>
+</div>
+
+<app-footer></app-footer>

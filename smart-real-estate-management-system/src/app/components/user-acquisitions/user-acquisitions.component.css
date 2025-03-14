@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    width: 100%;
+    height: 60vh;
+    background: url('/assets/background_5.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+}
+
+.welcome-container {
+    margin-top: 4rem;
+    margin-left: 5rem;
+    width: 50%;
+    line-height: 1.5;
+    font-size: 2rem;
+    color: black;
+}
+
+.welcome-container p {
+    color: #555;
+    line-height: normal;
+    font-size: 22px;
+    margin-top: 2rem;
+}
+
+.content {
+    padding: 18px;
+    padding-top: 8px;
+    display: none;
+    overflow: hidden;
+    width: 30%;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-acquisitions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.estate-card {
+    width: 25rem;
+    height: 35rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin-top: 2rem;
+}
+
+.image-container {
+    position: relative;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.estate-card img {
+    width: 400px;
+    height: 325px;
+    z-index: 0;
+}
+
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+}
+
+.estate-address {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.estate-address img {
+    height: 20px;
+    width: auto;
+}
+
+.estate-details {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.estate-details img {
+    height: 18px;
+    width: auto;
+    margin-top: 0.1rem;
+}
+
+.estate-size {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.estate-button {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+.estate-button span {
+    margin-top: 0.5rem;
+    font-size: 20px;
+}
+
+button {
+    height: 3rem;
+    width: 8rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+
+.pagination-controls {
+    margin-bottom: 20px;
+}
+
+.pageSize {
+    margin-left: 10px;
+}
+
+.pagination {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.pagination-btn {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.pagination-btn:hover {
+    color: #e0e0e0;
+}
+
+.pagination-number {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    background-color: #f0f0f0;
+    /* Fundal gri deschis implicit */
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 3px;
+    border: 1px solid transparent;
+}
+
+.pagination-number.active {
+    font-weight: bold;
+    color: #fff;
+    background-color: black;
+    /* Fundal albastru pentru pagina activă */
+}
+
+.pagination-number:not(.active):hover {
+    background-color: #e0e0e0;
+    /* Fundal gri mai închis la hover */
+}
+
+.no-favorites {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-top: 2rem;
+    width: 100%;
+    height: 10rem;
+    background-color: black;
+    position: relative;
+    bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .no-favorites {
+        margin-top: 4rem;
+        font-size: 1.75rem;
+    }
+
+    .filter {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .user-estates {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .estate-card {
+        height: auto;
+    }
+
+    .estate-button {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+    }
+
+    button {
+        width: 80%;
+        padding: 10px;
+    }
+
+
+}
+
+@media (max-width: 1350px) {
+
+    .welcome-container {
+        width: 60%;
+        font-size: 1.8rem;
+    }
+
+    .welcome-container p {
+        font-size: 16px;
+        width: 50%;
+
+    }
+
+}
+
+
+@media (max-width: 1250px) {
+    .welcome-container {
+        width: 80%;
+        font-size: 1.6rem;
+    }
+
+    .create-button button {
+        font-size: 18px;
+        height: 3.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .welcome-container {
+        font-size: 1.4em;
+    }
+
+    .welcome-container p {
+        font-size: 16px;
+        width: 40%;
+
+    }
+
+    .create-button button {
+        font-size: 18px;
+        height: 3.5rem;
+    }
+}
+
+
+@media (max-width: 760px) {
+    .welcome-container {
+        font-size: 1.2rem;
+        margin-left: 3rem
+    }
+
+    .create-button button {
+        font-size: 16px;
+        height: 3rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .welcome-container {
+        font-size: 1rem;
+    }
+
+    .welcome-container p {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .estate-card {
+        width: 300px;
+        height: auto;
+    }
+
+    .estate-card img {
+        width: 300px;
+        height: 275px;
+        z-index: 0;
+    }
+
+    .estate-address img {
+        height: 20px;
+        width: auto;
+    }
+
+    .estate-details img {
+        height: 18px;
+        width: auto;
+        margin-top: 0.1rem;
+    }
+
+}

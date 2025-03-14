@@ -1,0 +1,2 @@
+web: dotnet SmartRealEstateManagementSystem.dll
+release: dotnet ef database update --startup-project SmartRealEstateManagementSystem.csproj

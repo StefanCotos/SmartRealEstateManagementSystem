@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<div class="main-container">
+    <div class="container" *ngIf="username">
+        <h2>User({{username}}) Reviews</h2>
+        <ul class="reviews-list">
+            <li *ngFor="let review of reviews" class="review-item">
+                <h3 class="review-title">Reviewer name: {{ buyersUsername[review.buyerId] }}</h3>
+                <p class="review-description">{{ review.description }}</p>
+                <small>
+                    Rating:
+                    <div class="rating-bar-container">
+                        <div 
+                            class="rating-bar">
+                            <div 
+                                class="rating-bar-fill" 
+                                [ngStyle]="{ width: (review.rating * 10) + '%' }"
+                                [ngClass]="{
+                                    'low': review.rating <= 4,
+                                    'medium': review.rating > 4 && review.rating <= 7,
+                                    'high': review.rating > 7
+                                }">
+                            </div>
+                        </div>
+                        <span class="rating-value">{{ review.rating }}/10</span>
+                    </div>
+                </small>                
+            </li>
+        </ul>
+        <p *ngIf="reviews.length === 0">There are no reviews</p>
+        <button *ngIf="ifCanAddReview()" class="add-review-button" (click)="navigateToAddReview()">Add Review</button>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+
+<div class="main-container">
+    <div class="page-content">
+        <div class="content-section">
+            <h1>Manage Reports</h1>
+            <input type="text" placeholder="Search reports..." [(ngModel)]="reportSearchTerm"
+                (keyup)="filterReports()" />
+            <table class="reports-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Buyer</th>
+                        <th>Seller</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let report of displayedReports">
+                        <td>{{ report.description }}</td>
+                        <td>{{ report['buyerName'] }}</td>
+                        <td>{{ report['sellerName'] }}</td>
+                        <td>
+                            <button (click)="deleteReport(report.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button *ngIf="reportCurrentPage > 1" (click)="changeReportPage(reportCurrentPage - 1)">Previous</button>
+            <button *ngIf="reportCurrentPage < reportTotalPages"
+                (click)="changeReportPage(reportCurrentPage + 1)">Next</button>
+        </div>
+
+        <div class="content-section">
+            <h1>Manage Users</h1>
+            <input type="text" placeholder="Search users..." [(ngModel)]="userSearchTerm" (keyup)="filterUsers()" />
+            <table class="users-table">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Username</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of displayedUsers">
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.userName }}</td>
+                        <td>
+                            <button (click)="deleteUser(user.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button *ngIf="userCurrentPage > 1" (click)="changeUserPage(userCurrentPage - 1)">Previous</button>
+            <button *ngIf="userCurrentPage < userTotalPages" (click)="changeUserPage(userCurrentPage + 1)">Next</button>
+        </div>
+
+        <div class="content-section">
+            <h1>Manage Estates</h1>
+            <input type="text" placeholder="Search estates..." [(ngModel)]="estateSearchTerm"
+                (keyup)="filterEstates()" />
+            <table class="estates-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>City</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let estate of displayedEstates">
+                        <td>{{ estate.name }}</td>
+                        <td>{{ estate.description }}</td>
+                        <td>{{ estate.price }}</td>
+                        <td>{{ estate.city }}</td>
+                        <td>
+                            <button (click)="deleteEstate(estate.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button *ngIf="estateCurrentPage > 1" (click)="changeEstatePage(estateCurrentPage - 1)">Previous</button>
+            <button *ngIf="estateCurrentPage < estateTotalPages"
+                (click)="changeEstatePage(estateCurrentPage + 1)">Next</button>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

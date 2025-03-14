@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+
+<div class="main-container">
+    <div class="welcome-container">
+        <h1>Your Acquisitions</h1>
+        <p>
+            This page is dedicated to your personal acquisitions.
+            Each property represents an important step in your journey.
+        </p>
+    </div>
+</div>
+
+<div class="user-acquisitions">
+    <div *ngIf="estates.length === 0" class="no-favorites">No estates purchased.</div>
+    <div *ngFor="let estate of paginatedEstates" class="estate-card">
+        <img [src]="imageCache[estate.id || '']" alt="estate" />
+        <div class="card-content">
+            <h3>{{ estate.name }}</h3>
+            <div class="estate-address">
+                <img src="../../../assets/map.png" alt="map-icon" />
+                <span>{{ estate.street }}, {{ estate.city }}, {{ estate.state }}</span>
+            </div>
+            <div class="estate-details">
+                <div class="estate-size">
+                    <img src="../../../assets/area.png" alt="size-icon" />
+                    <span>{{ estate.houseSize }} m&#178;</span>
+                </div>
+            </div>
+            <div class="estate-button">
+                <button (click)="navigateToDetailEstate(estate.id || '')">
+                    View details
+                </button>
+                <span>{{ estate.price }} EUR</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pagination">
+    <a class="pagination-btn" (click)="changePage(false)" [class.disabled]="currentPage === 1">&#x276E;</a>
+    <div *ngFor="let num of getPagesArray()">
+        <a class="pagination-number" [class.active]="num === currentPage"
+            (click)="currentPage = num; updatePaginatedEstates()">{{ num }}</a>
+    </div>
+    <a class="pagination-btn" (click)="changePage(true)"
+        [class.disabled]="currentPage === getPagesArray().length">&#x276F;</a>
+</div>
+
+<app-footer></app-footer>

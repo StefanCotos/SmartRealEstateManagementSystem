@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+<div class="main-container">
+  <div class="container" *ngIf="user">
+    <div class="details">
+      <h1> Profile </h1>
+      <div class="row">
+        <p><strong>First Name:</strong></p>
+        <p>{{ user.firstName }}</p>
+      </div>
+      <div class="row">
+        <p><strong>Last Name:</strong></p>
+        <p>{{ user.lastName }}</p>
+      </div>
+      <div class="row">
+        <p><strong>Username:</strong></p>
+        <p>{{ user.userName }}</p>
+      </div>
+      <div class="row">
+        <p><strong>Email:</strong></p>
+        <p>{{ user.email }}</p>
+      </div>
+      <div class="row">
+        <p><strong>Password:</strong></p>
+        <p> ****** </p>
+        <button class="change-password-button" (click)="changePassword()">Change password</button>
+      </div>
+      <button class="edit-button" (click)="editProfile()">Edit Profile</button>
+      <button class="reviews-button" (click)="seeReviews(user.id)">Reviews</button>
+      <button class="estates-button" (click)="seeEstates()">Estates</button>
+      <button class="acquisitions-button" (click)="seeAcquisitions()">Acquisitions</button>
+      <button class="remove-button" (click)="removeProfile()">Remove Profile</button>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

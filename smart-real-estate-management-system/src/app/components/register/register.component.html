@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+<div class="register-container">
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h1>Register</h1>
+    <div class="form-content">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input id="firstName" formControlName="firstName" type="text" />
+        <div class="error" *ngIf="registerForm.get('firstName')?.hasError('required')">
+          First Name is required.
+        </div>
+        <div class="error" *ngIf="registerForm.get('firstName')?.hasError('maxlength')">
+          First Name cannot be longer than 100 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" formControlName="lastName" type="text" />
+        <div class="error" *ngIf="registerForm.get('lastName')?.hasError('required')">
+          Last Name is required.
+        </div>
+        <div class="error" *ngIf="registerForm.get('lastName')?.hasError('maxlength')">
+          Last Name cannot be longer than 100 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="userName">Username</label>
+        <input id="userName" formControlName="userName" type="text" />
+        <div class="error" *ngIf="registerForm.get('userName')?.hasError('required')">
+          Username is required.
+        </div>
+        <div class="error" *ngIf="registerForm.get('userName')?.hasError('maxlength')">
+          Username cannot be longer than 100 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" />
+        <div class="error" *ngIf="registerForm.get('email')?.hasError('required')">
+          Email is required.
+        </div>
+        <div class="error" *ngIf="registerForm.get('email')?.hasError('email')">
+          Email is invalid.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" />
+        <div class="error" *ngIf="registerForm.get('password')?.hasError('required')">
+          Password is required.
+        </div>
+        <div class="error" *ngIf="registerForm.get('password')?.hasError('minlength')">
+          Password must be at least 6 characters.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" />
+        <div class="error" *ngIf="registerForm.get('confirmPassword')?.hasError('required')">
+          Confirm Password is required.
+        </div>
+        <div class="error" *ngIf="registerForm.get('confirmPassword')?.hasError('minlength')">
+          Password must be at least 6 characters.
+        </div>
+        <div class="error" *ngIf="registerForm.get('confirmPassword')?.hasError('passwordMismatch')">
+          Passwords must match.
+        </div>
+      </div>
+
+    </div>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
+</div>
+
+<app-footer></app-footer>

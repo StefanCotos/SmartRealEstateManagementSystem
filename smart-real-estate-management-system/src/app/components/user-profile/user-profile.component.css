@@ -1,0 +1,147 @@
+.main-container {
+  width: 100%;
+  min-height: 100%;
+  background: url('/assets/background_5.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: column;
+}
+
+.container {
+  max-width: 800px;
+  width: 95%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center; /* Add this line */
+}
+
+
+.details {
+  padding: 20px;
+  border-radius: 8px;
+
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.buttons {
+  align-self: flex-end;
+
+}
+
+p {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #555;
+}
+
+p strong {
+  color: #000;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.details p {
+  margin: 5px 0;
+  word-wrap: break-word;
+  /* Adaugă această linie */
+  overflow-wrap: break-word;
+  /* Adaugă această linie */
+}
+
+.details p strong {
+  display: inline-block;
+  width: 150px;
+}
+
+.remove-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.remove-button:hover {
+  background-color: #ff1a1a;
+}
+
+.edit-button,
+.reviews-button,
+.estates-button,
+.acquisitions-button {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 10px;
+
+}
+
+.change-password-button {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 15px;
+
+}
+
+.edit-button:hover,
+.reviews-button:hover,
+.change-password-button:hover,
+.estates-button:hover,
+.acquisitions-button:hover {
+  background-color: black;
+}
+
+@media (max-width: 750px) {
+  .main-container {
+    padding-top: 200px;
+    justify-content: flex-start;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+  }
+
+  .details {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
